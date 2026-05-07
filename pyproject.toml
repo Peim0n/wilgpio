@@ -32,5 +32,3 @@ include = ["wilgpio*"]
 
 [tool.setuptools]
 include-package-data = true
-long_description = "README.md"
-long_description_content_type = "text/markdown"
