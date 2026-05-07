@@ -14,6 +14,12 @@ dependencies = [
     "lgpio>=0.2.0",
 ]
 
+license = "MIT"
+
+license-files = ["LICENSE*"]
+
+
+
 [project.urls]
 "Homepage" = "https://github.com/Peim0n/wilgpio"
 "Bug Tracker" = "https://github.com/Peim0n/wilgpio/issues"
