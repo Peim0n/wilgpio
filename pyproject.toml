@@ -22,12 +22,14 @@ dependencies = [
     "lgpio>=0.2.0",
 ]
 
-
+long_description = "README.md"
+long_description_content_type = "text/markdown"
 
 
 [project.urls]
 "Homepage" = "https://github.com/Peim0n/wilgpio"
 "Bug Tracker" = "https://github.com/Peim0n/wilgpio/issues"
+"Repository" = "https://github.com/Peim0n/wilgpio.git"
 
 # Настройка пакетов
 [tool.setuptools.packages.find]
