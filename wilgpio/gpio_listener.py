@@ -47,7 +47,7 @@ class GpioListener:
         self.__edge_type = _edge_to_lgpio(edge_type)
 
         self.__handle: int = -1
-        self.__cb_id: int = -1
+        self.__cb_id = None
 
         self._init_gpio()
 
@@ -58,8 +58,12 @@ class GpioListener:
                 raise IOError(f"Failed to open gpiochip{self.__chip_num}")
 
             lgpio.gpio_claim_alert(self.__handle, self.__pin_num, self.__edge_type)
+            
             self.__cb_id = lgpio.callback(
-                self.__handle, self.__pin_num, self.__edge_type, self.__internal_callback
+                self.__handle,
+                self.__pin_num,
+                self.__edge_type,
+                self.__internal_callback,
             )
 
             print(f"GpioListener: Pin {self.__pin_num} configured "
@@ -90,12 +94,12 @@ class GpioListener:
 
     def stop(self) -> None:
         """Release GPIO resources."""
-        if self.__cb_id >= 0:
+        if self.__cb_id is not None:
             try:
                 lgpio.callback_cancel(self.__cb_id)
             except Exception:
                 pass
-            self.__cb_id = -1
+            self.__cb_id = None
 
         if self.__handle >= 0:
             try:
