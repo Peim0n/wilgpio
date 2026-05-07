@@ -1,0 +1,26 @@
+[project]
+name = "wilgpio"
+version = "0.2.0"
+description = "Wiegand protocol library for Raspberry Pi / Orange Pi using lgpio"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your@email.com"}
+]
+keywords = ["wiegand", "rfid", "access-control", "gpio", "lgpio", "orangepi"]
+
+dependencies = [
+    "lgpio>=0.2.0",
+]
+
+[project.urls]
+"Homepage" = ""
+"Bug Tracker" = ""
+
+[tool.setuptools]
+packages = ["wilgpio"]
+package-dir = {"" = "."}
+
+[tool.setuptools.dynamic]
+version = {attr = "wilgpio.__version__"}
