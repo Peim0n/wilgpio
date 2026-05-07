@@ -5,7 +5,7 @@ description = "Wiegand protocol library for Raspberry Pi / Orange Pi using lgpio
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-    {name = "Danil"}
+    {name = "Peimon"}
 ]
 
 keywords = ["wiegand", "rfid", "access-control", "gpio", "lgpio", "orangepi"]
